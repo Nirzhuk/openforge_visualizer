@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/openforge_visualizer/static/css/main.d1b05096.chunk.css",
+    "main.js": "/openforge_visualizer/static/js/main.930b2a9f.chunk.js",
+    "main.js.map": "/openforge_visualizer/static/js/main.930b2a9f.chunk.js.map",
+    "runtime-main.js": "/openforge_visualizer/static/js/runtime-main.b5297c66.js",
+    "runtime-main.js.map": "/openforge_visualizer/static/js/runtime-main.b5297c66.js.map",
+    "static/js/2.09ca05c5.chunk.js": "/openforge_visualizer/static/js/2.09ca05c5.chunk.js",
+    "static/js/2.09ca05c5.chunk.js.map": "/openforge_visualizer/static/js/2.09ca05c5.chunk.js.map",
+    "index.html": "/openforge_visualizer/index.html",
+    "precache-manifest.26e0d98655425d6a7516903a3f255e0a.js": "/openforge_visualizer/precache-manifest.26e0d98655425d6a7516903a3f255e0a.js",
+    "service-worker.js": "/openforge_visualizer/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/openforge_visualizer/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.09ca05c5.chunk.js.LICENSE.txt": "/openforge_visualizer/static/js/2.09ca05c5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b5297c66.js",
+    "static/js/2.09ca05c5.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.930b2a9f.chunk.js"
+  ]
+}
