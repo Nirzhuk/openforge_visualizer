@@ -54,7 +54,7 @@ export interface loadSTLProps extends Omit<STLViewerProps, "container"> {
 const loadSTL = ({ context, loader, model, onError }: loadSTLProps) => {
   const { renderer, controls, camera, scene } = context;
   loader.load(
-    window.location.href + `${model}.stl`,
+    window.location.href + `models/${model}.stl`,
     function (geometry) {
       var material = new THREE.MeshPhongMaterial({
         color: 0xff5533,
