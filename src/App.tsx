@@ -1,34 +1,24 @@
 import React, { useContext } from "react";
 import * as THREE from "three";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./containers/Home";
+import { ThemeProvider } from "styled-components";
 import { threeContext as AppContext, currentState } from "./context/main";
+import { AppRoutes } from "./routes";
+import { GlobalStyle, theme } from "./core/theme";
 
 const App = () => {
   const context = useContext(AppContext);
   const { scene } = context;
-  scene.background = new THREE.Color("rgb(0, 0, 0)");
+  scene.background = new THREE.Color(theme.background);
   scene.name = "Escena principal";
   scene.add(new THREE.HemisphereLight(0xff5533, 1.5));
 
   return (
-    <AppContext.Provider value={currentState}>
-      <Router>
-        <p> Nav</p>
-        <div>
-          <Link to="/visual">Prueba</Link>
-        </div>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-    </AppContext.Provider>
+    <ThemeProvider theme={theme}>
+      <AppContext.Provider value={currentState}>
+        <GlobalStyle />
+        <AppRoutes />
+      </AppContext.Provider>
+    </ThemeProvider>
   );
 };
 

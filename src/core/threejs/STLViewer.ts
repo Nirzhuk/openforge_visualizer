@@ -1,5 +1,4 @@
 import * as THREE from "three";
-
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import { MainContextType } from "../../context/main";
 
@@ -7,6 +6,8 @@ interface removeEntityProps {
   context: MainContextType;
   model: string;
 }
+
+const regexLink = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
 export const removeEntity = ({ context, model }: removeEntityProps) => {
   const { scene, renderer, controls, camera } = context;
@@ -53,8 +54,15 @@ export interface loadSTLProps extends Omit<STLViewerProps, "container"> {
 
 const loadSTL = ({ context, loader, model, onError }: loadSTLProps) => {
   const { renderer, controls, camera, scene } = context;
+
+  const modelUrl = model.match(regexLink);
+  let urlSTL = `${process.env.PUBLIC_URL}/models/${model}.stl`;
+  if (modelUrl) {
+    urlSTL = modelUrl[0];
+  }
+
   loader.load(
-    window.location.href + `models/${model}.stl`,
+    urlSTL,
     function (geometry) {
       var material = new THREE.MeshPhongMaterial({
         color: 0xff5533,

@@ -2,6 +2,7 @@ import React, { FC, useRef, useContext, useEffect } from "react";
 import STLViewer, { removeEntity } from "../core/threejs/STLViewer";
 import { threeContext } from "../context/main";
 import usePrevious from "../hooks/usePrevious";
+import styled from "styled-components";
 
 interface ThreeRendererProps {
   model: string;
@@ -34,13 +35,27 @@ const ThreeRenderer: FC<ThreeRendererProps> = ({
     );
     STLViewer({ context, container: inputRef!.current!, model, onError });
   }, []);
-
   return (
-    <div
-      style={{ margin: "0 auto", width: "500px", height: "500px" }}
-      id={containerId}
-    ></div>
+    <ThreeContainerPadding>
+      <ThreeContainer id={containerId}></ThreeContainer>
+    </ThreeContainerPadding>
   );
 };
+
+const ThreeContainer = styled.div`
+  width: 500px;
+  height: 500px;
+  :focus {
+    outline: 0;
+  }
+`;
+const ThreeContainerPadding = styled.div`
+  border: solid 2px ${(props) => props.theme.backgroundLight};
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+`;
 
 export default ThreeRenderer;

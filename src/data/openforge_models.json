@@ -1,0 +1,13 @@
+{
+  "dungeon": {
+    "title": "Dungeon Stone Set",
+    "updated": " 26-04-2019",
+    "openforge2_updated": true,
+    "items": [
+      {
+        "name": "Base",
+        "files": ["sdsd", "asdas"]
+      }
+    ]
+  }
+}
